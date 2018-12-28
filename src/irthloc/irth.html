@@ -1,0 +1,487 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0045)http://www.islamicsoftware.org/irth/irth.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>The IRTH Program</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<meta name="keywords" content="Islamic software,freeware,Islamic inheritence,irth"/>
+<meta name="description" content="Calculate inheritance shares of eligible heirs according to Islamic law."/>
+<meta name="classification" content="Islamic software,freeware"/>
+<meta name="author" content="Ayman Abu-Mostafa"/>
+<script type="text/javascript" src="env.js"/></script>
+<script type="text/javascript" src="rational.js"/></script>
+<script type="text/javascript" src="irth.js"/></script>
+<script type="text/javascript" src="testirth.js"/></script>
+<script type="text/javascript" src="irthui.js"/></script>
+</head>
+<body onunload="if(resultsWindow)resultsWindow.close();resultsWindow=null;"
+	onload="initPage();">
+<noscript>
+<h1 align="center" style="text-align:center">This page requires JavaScript 1.1</h1>
+<p>
+This page requires a browser which supports JavaScript 1.1 or later.
+</p>
+<p>
+Your browser either does not support JavaScript, or it has JavaScript disabled.
+If you want to correctly view this page, please upgrade your browser or enable
+JavaScript support.
+</p>
+</noscript>
+	<table border="0" width="99%">
+	<tr valign="bottom">
+	<td valign="top">
+		<img src="mafroodha_tr.jpg" alt="A determinate share. Quran 4:7" id="NaseebanMafroodhanImage"/>
+	</td>
+	<td>
+	<h1>
+		<a id="irth">IRTH: The Islamic Inheritance Program</a>
+	</h1>
+	</td>
+	<td valign="top">
+		<img src="fareedha_tr.jpg" alt="Ordained by God. Quran 4:11" id="FareedhaImage"/>
+	</td>
+	</tr>
+	</table>
+	<a href="http://www.islamicsoftware.org">Home</a>&nbsp;|&nbsp;
+	<a href="questions.html">Frequently asked questions</a>&nbsp;|&nbsp; 
+	<a href="irthhelp.html">How to use this program</a>&nbsp;|&nbsp;
+	<script type="text/javascript"><!--
+	if (!isLocal)
+	{
+		document.write("<" + "a href=\"local.html\">Save a copy<" + "/a>&nbsp;|&nbsp;");
+	}
+	//--></script>
+	<a href="mailto:dr.ayman@gmail.com?subject=Bug(s) in your IRTH program">Report bugs </a>&nbsp;|&nbsp; 
+	<a href="mailto:dr.ayman@gmail.com?subject=Free Islamic software contribution">Contribute free Islamic software</a>&nbsp;&nbsp;
+	<!-------------------Translate----------------------------------------------------------------------->
+	<script type="text/javascript"><!--
+	if (!isLocal)
+	{
+		document.writeln("<" + "select name=\"TranslateSelector\" onchange=\"translate(this.options[this.selectedIndex].value);return true;\">");
+		document.writeln("<" + "option value=\"\" selected>English<" + "/option>");
+		document.writeln("<" + "option value=\"id\">Indonesia<" + "/option>");
+		document.writeln("<" + "/select>");
+	}
+	//--></script>
+				<!--<option value="ar">عربي</option>-->
+				<!--<option value="de">Deutsch</option>-->
+				<!--<option value="fr">Français</option>-->
+				<!--<option value="es">Español</option>-->
+				<!--<option value="pt">Português</option>-->
+				<!--<option value="nl">Nederlands</option>-->
+	<!-------------------Irth Form----------------------------------------------------------------------->
+	<form id="IrthForm" action="#">
+		<table border="0">
+			<tr style="font-weight: bold; border: 2px">
+				<td width="20%" style="width:20%">Heir categories</td>
+				<td width="10%" style="width:10%">Number of heirs</td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td width=\"10%\">Each inherits<" + "/td>");
+				}
+				//--></script>
+				<td width="20%" style="width:20%">Heir categories</td>
+				<td width="10%" style="width:10%">Number of heirs</td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td width=\"10%\">Each inherits<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Sons</td>
+				<td><input name="num1" tabindex="1"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get1\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Half-Brothers from Father</td>
+				<td><input name="num14" tabindex="14"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get14\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Daughters</td>
+				<td><input name="num2" tabindex="2"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get2\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Half-Sisters from Father</td>
+				<td><input name="num15" tabindex="15"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get15\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Sons of sons</td>
+				<td><input name="num3" tabindex="3"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get3\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Siblings from Mother</td>
+				<td><input name="num16" tabindex="16"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get16\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Daughters of Sons</td>
+				<td><input name="num4" tabindex="4"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get4\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Sons of Full Brothers</td>
+				<td><input name="num17" tabindex="17"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get17\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Husband</td>
+				<td><input name="num5" tabindex="5"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get5\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Sons of Half-Brothers from Father</td>
+				<td><input name="num18" tabindex="18"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get18\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Wife</td>
+				<td><input name="num6" tabindex="6"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get6\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Full Brothers of Father</td>
+				<td><input name="num19" tabindex="19"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get19\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Father</td>
+				<td><input name="num7" tabindex="7"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get7\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Half-Brothers of Father from their Father</td>
+				<td><input name="num20" tabindex="20"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get20\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Mother</td>
+				<td><input name="num8" tabindex="8"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get8\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Sons of Full Brothers of Father</td>
+				<td><input name="num21" tabindex="21"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get21\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Father (or higher) of Father</td>
+				<td><input name="num9" tabindex="9"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get9\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Sons of Half-Brothers of Father from their Father</td>
+				<td><input name="num22" tabindex="22"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get22\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Mother (or higher) of Father</td>
+				<td>
+					<input name="num10" tabindex="10" size="4"/>&nbsp; 
+					<a href="javascript:showGmGen()">Junior?</a>&nbsp;
+					<input name="gmfy" id="gmfy" type="checkbox" value="1" onclick="this.form.elements['gmmy'].checked=false;return true;"/>
+				</td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get10\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Servants</td>
+				<td><input name="num23" tabindex="23"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get23\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Mother (or higher) of Mother</td>
+				<td>
+					<input name="num11" tabindex="11" size="4"/>&nbsp; 
+					<a href="javascript:showGmGen()">Junior?</a>&nbsp;
+					<input name="gmmy" id="gmmy" type="checkbox" value="2" onclick="this.form.elements['gmfy'].checked=false;return true;"/>
+				</td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get11\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Other relatives to mother</td>
+				<td><input name="num24" tabindex="24"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get24\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Full Brothers</td>
+				<td><input name="num12" tabindex="12"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get12\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Bequest to non-heirs</td>
+				<!--td>&nbsp;</td-->
+				<td><a href="javascript:promptForBequest()">Enter portion...</a></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get0\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+			<tr>
+				<td>Full Sisters</td>
+				<td><input name="num13" tabindex="13"/></td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get13\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+				<td>Islamic Treasury</td>
+				<td>&nbsp;</td>
+				<script type="text/javascript"><!--
+				if (isModern || isIE)
+				{
+					document.writeln("<" + "td id=\"get25\">&nbsp;<" + "/td>");
+				}
+				//--></script>
+			</tr>
+		</table>
+		<div align="center" style="text-align:center">
+			<input type="button" value="Preferences" name="PreferencesButton" onclick="location.href='#preferences';return true;"/>&nbsp;&nbsp;
+			<input type="button" value="Calculate" name="CalculateButton" onclick="calculate();return true;"/>&nbsp;&nbsp;
+			<input type="button" value="Show Details" name="DetailsButton" disabled="disabled" onclick="if(resultsWindow)resultsWindow.focus();return true;"/>&nbsp;&nbsp;
+			<input type="button" name="PreviousTestButton" value="<<" onclick="previousTest();return true;"/>
+			<!-------------------Test Cases----------------------------------------->
+			<select name="TestCaseSelector" onchange="showTestCase(this.options[this.selectedIndex].value);return true;">
+				<option value="-1" selected="selected">Test Cases</option>
+				<option value="2">Abu-Bakr</option>
+				<option value="4">Gharraiyya (Omar)</option>
+				<option value="5">Minbariyya (Ali)</option>
+				<option value="6">Judge Shuraih</option>
+				<option value="7">Shafiiyya</option>
+				<option value="8">Kharqaa</option>
+				<option value="9">Malikiyya</option>
+				<option value="12">Pseudo-Malikiyya</option>
+				<option value="13">Akdariyya</option>
+				<option value="21">Mushtarika</option>
+				<option value="-2">Random Case</option>
+				<option value="-3">Random Heirs</option>
+				<option value="-7">All Test Cases</option>
+			</select>
+			<input type="button" name="NextTestButton" value=">>" onclick="nextTest();return true;"/>&nbsp;&nbsp;
+			<input type="button" value="Clear" onclick="clearForm();clearBequest();return true;"/>&nbsp;&nbsp;
+			<script type="text/javascript"><!--
+			if (isModern || isIE)
+			{
+				document.writeln("<" + "span id=\"caseNum\">" + "&nbsp;<" + "/span>");
+			}
+			else
+			{
+				document.writeln("<" + "input name=\"caseNum\" disabled>");
+			}
+			//--></script>
+		</div>
+	</form>
+	<!-------------Preferences Form----------------->
+	<form id="PreferencesForm" action="#">
+		<a id="preferences"><b>Preferences:</b></a>
+		<table border="0">
+			<tr>
+				<td colspan="2">
+					<input type="radio" name="ReportingMode" value="0" onclick="setStatus('');"/>Show results only &nbsp;
+					<input type="radio" name="ReportingMode" value="1" checked="checked" onclick="setStatus('');"/>Show details &nbsp; 
+					<input type="radio" name="ReportingMode" value="2" onclick="setStatus('');"/>Show debugging statements &nbsp; 
+					<input type="radio" name="ReportingMode" value="3" onclick="setStatus('');"/>Show results in a table &nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<b>Favor a jurisprudence school</b>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>
+					Juristic schools may have different opinions about how to divide up an estate. 
+					The IRTH program does not favor any specific school, but rather follows the 
+					recommendations of the book "Fiqh-us Sunna." If you prefer to follow a specific 
+					juristic school, click on the radio button next to its name.
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="radio" name="School" value="0" checked="checked" onclick="school=0;if(allowRuddBox.checked==false)allowRuddBox.click();setStatus('');"/>No 
+					preference</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="radio" name="School" value="1" onclick="school=Hanafi;if(allowRuddBox.checked==false)allowRuddBox.click();if(allowRuddToSpousesBox.checked==true)allowRuddToSpousesBox.click();setStatus('');"/>Abu-Haneefa</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="radio" name="School" value="2" onclick="school=Maliki;if(allowRuddBox.checked==true)allowRuddBox.click();if(allowRuddToSpousesBox.checked==true)allowRuddToSpousesBox.click();setStatus('');"/>Malik</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="radio" name="School" value="3" onclick="school=Shafii;if(allowRuddBox.checked==false)allowRuddBox.click();if(allowRuddToSpousesBox.checked==true)allowRuddToSpousesBox.click();setStatus('');"/>Shafii</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="radio" name="School" value="4" onclick="school=Hanbali;if(allowRuddBox.checked==false)allowRuddBox.click();if(allowRuddToSpousesBox.checked==true)allowRuddToSpousesBox.click();setStatus('');"/>Ibn 
+					Hanbal</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="radio" name="School" value="5" onclick="school=Egypt;if(allowRuddBox.checked==false)allowRuddBox.click();if(allowRuddToSpousesBox.checked==false)allowRuddToSpousesBox.click();setStatus('');" id="Radio1"/>Egyptian 
+					law</td>
+			</tr>
+			<tr>
+				<td valign="top"><input type="checkbox" name="allowRuddBox" value="AllowRudd" checked="checked" onclick="allowRudd=(this.checked==true);setStatus('');"/></td>
+				<td>
+					<b>Allow reversion</b>
+					<br/>
+					When the estate is undersubscribed after named heirs get their named shares, 
+					the majority of scholars divide up the remainder among the named heirs by the 
+					ratios of their named shares. This redivision of the remainder is called 'rudd' 
+					or reversion. Imam Malik did not allow reversion. Malik's students allowed 
+					reversion only if the treasury is corrupt. Checking this box means you want to 
+					allow reversion.
+				</td>
+			</tr>
+			<tr>
+				<td valign="top"><input type="checkbox" name="allowRuddToSpousesBox" value="AllowRuddToSpouses" onclick="allowRuddToSpouses=(this.checked==true);setStatus('');"/></td>
+				<td>
+					<b>Allow reversion to spouses</b>
+					<br/>
+					The majority opinion does not include spouses in reversion, as they are not 
+					blood relatives. Uthman includes spouses in reversion as they are named heirs. 
+					Egyptian law includes spouses in reversion if they are the sole heirs. Checking 
+					this box means you want to allow reversion to spouses.
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<b>Bequest to non-heirs</b>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>
+					Specify a bequest to non-heirs as a fraction of the estate, e.g., 1/4, not to 
+					exceed 1/3 or leave blank &nbsp; <input type="text" name="bequestField"/>
+				</td>
+			</tr>
+		</table>
+		<div align="center">
+			<input type="button" value="Back to Input Page" onclick="location.href='#irth'"/>&nbsp;&nbsp;
+			<input type="button" value="Reset Preferences" onclick="clearPreferences()"/>
+		</div>
+	</form>
+	To view the source code of this application, <em>right-click</em> on the links 
+	below and save their targets to your computer. 
+	<br/>
+	<a href="rational.js">Rational number arithmetic functions</a>
+	&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="testrational.html">A test of rational number arithmetic</a>
+	<br/>
+	<a href="irth.js">Inheritance rules and functions</a>
+	&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="testirth.js">Test cases for the IRTH program</a>
+	<hr/>
+	May God accept this work from me and turn it into a "knowledge that benefits."
+	<address>
+		<a href="mailto:dr.ayman@gmail.com?subject=About your IRTH program">
+			Dr. Ayman Abu-Mostafa 
+		</a>
+	</address>
+</body>
+</html>

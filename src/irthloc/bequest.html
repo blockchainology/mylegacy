@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0048)http://www.islamicsoftware.org/irth/bequest.html -->
+<html>
+<head>
+<title>Bequest Specification</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<script><!--
+function setBequest() {
+	window.opener.document.forms['PreferencesForm'].elements['bequestField'].value=
+	document.forms[0].elements['BequestPortion'].value
+}
+//--></script>
+</head>
+<body>
+<div align="center"><h1>Bequest Specification</h1></div>
+<p>
+Specify a bequest (a gift to non-heirs), if you wish, as a portion of the estate, e.g.,
+1/4, not to exceed 1/3 (one-third). Do not enter any spaces in the portion.
+</p>
+<p>
+If you do not wish to give a bequest, leave the entry field blank.
+</p>
+<form>
+<p>
+Bequest portion to non-heirs: (Maximum 1/3)&nbsp;
+<input type="text" name="BequestPortion">
+</p>
+<p>
+<div align="center">
+<input type="button" name="OkButton" value="Ok" onclick="setBequest();window.close();">
+</div>
+</p>
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0053)http://www.islamicsoftware.org/irth/testrational.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Test Rational Numbers</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<script type="text/javascript" src="rational.js"/></script>
+<script type="text/javascript"><!--
+function test(x, y) {
+	var s = "Product = " + toString(multiply(x,y)) + "\n";	
+	s += "Quotient = " + toString(divide(x,y)) + "\n";
+	s += "Sum = " + toString(add(x,y)) + "\n";
+	s += "Difference = " + toString(subtract(x,y)) + "\n";
+	var lt1 = isLt(x,y)? "less than second number" : "";
+	var gt1 = isGt(x,y)? "greater than second number" : "";
+	var eq1 = equals(x,y)? "equal to second number" : "";
+	var lt2 = isLt(y,x)? "less than first number" : "";
+	var gt2 = isGt(y,x)? "greater than first number" : "";
+	var eq2 = equals(y,x)? "equal to first number" : "";
+	s += "First number is " + lt1 + " " + gt1 + " " + eq1 + "\n";
+	s += "Second number is " + lt2 + " " + gt2 + " " + eq2 + "\n";
+	var zero1 = isZero(x)? "zero" : "";
+	var one1 = isOne(x)? "one" : "";
+	var ltone1 = isLtOne(x)? "less than one" : "";
+	var gtone1 = isGtOne(x)? "greater than one" : "";
+	var neg1 = isNegative(x)? "negative" : "";
+	var zero2 = isZero(y)? "zero" : "";
+	var one2 = isOne(y)? "one" : "";
+	var ltone2 = isLtOne(y)? "less than one" : "";
+	var gtone2 = isGtOne(y)? "greater than one" : "";
+	var neg2 = isNegative(y)? "negative" : "";
+	s += "First number is " + zero1 + " " + one1 + " " + ltone1 + " " + gtone1 + " " + neg1 + "\n";
+	s += "Second number is " + zero2 + " " + one2 + " " + ltone2 + " " + gtone2 + " " + neg2 + "\n";
+	return s;
+}
+//-->
+</script>
+</head>
+<body>
+<form action="#">
+Enter two rational numbers in the format numerator/denominator, e.g., 1/2 and 3/4<br>
+First rational number <input name="first"><br>
+Second rational number <input name="second"><br>
+<textarea name="Results" rows="7" cols="60">&nbsp;</textarea><br>
+<input type="button" value="Test" onclick="this.form.Results.value=test(toRational(this.form.first.value),toRational(this.form.second.value)); return false;"/>
+</form>
+</body>
+</html>
